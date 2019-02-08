@@ -4,17 +4,11 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="Lands3.Views.LoginPage"
     BindingContext="{Binding Main, Source={StaticResource Locator}}"
-    Title="Login">
+    Title="Lands">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout
                 Padding="10, 20">
-                <Label 
-                    FontAttributes="Bold"
-                    FontSize="Large"
-                    HorizontalOptions="CenterAndExpand"
-                    Text="Lands">
-                </Label>
                 <Image
                     Source="onu_logo"
                     WidthRequest="100">
@@ -28,7 +22,8 @@
                     <Label 
                         Grid.Row="0"
                         Grid.Column="0"
-                        Text="E-Mail">
+                        Text="E-Mail"
+                        VerticalOptions="Center">
                     </Label>
                     <Entry
                         Grid.Row="0"
@@ -39,7 +34,8 @@
                     <Label 
                         Grid.Row="1"
                         Grid.Column="0"
-                        Text="Password">
+                        Text="Password"
+                        VerticalOptions="Center">
                     </Label>
                     <Entry
                         Grid.Row="1"
@@ -62,16 +58,21 @@
                         HorizontalOptions="End">
                     </Switch>
                 </StackLayout>
-                <Label
-                    HorizontalOptions="Center"
-                    Text="Forgot your password ?">
-                </Label>
                 <StackLayout
-                    Margin="30, 0">
+                    Margin="15">
+                    <Label
+                        HorizontalOptions="Center"
+                        Text="Forgot your password ?">
+                    </Label>
+                </StackLayout>
+                <StackLayout
+                    Margin="30, 0"
+                    Orientation="Horizontal">
                     <Button
                         BackgroundColor="Navy"
                         BorderRadius="23"
                         HeightRequest="46"
+                        HorizontalOptions="FillAndExpand"
                         Text="Login"
                         TextColor="White">
                     </Button>
@@ -79,12 +80,13 @@
                         BackgroundColor="Purple"
                         BorderRadius="23"
                         HeightRequest="46"
+                        HorizontalOptions="FillAndExpand"
                         Text="Register"
                         TextColor="White">
                     </Button>
                 </StackLayout>
                 <StackLayout
-                    Margin="30, 0"
+                    Margin="50, 20"
                     Orientation="Horizontal">
                     <Image
                         Source="facebook_logo"
