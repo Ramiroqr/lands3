@@ -6,15 +6,17 @@
     BindingContext="{Binding Main, Source={StaticResource Locator}}"
     Title="Lands">
     <ContentPage.Content>
-        <ScrollView>
+        <ScrollView
+            BindingContext="{Binding Login}">
             <StackLayout
-                Padding="10, 20">
+                Padding="10, 10">
                 <Image
                     Source="onu_logo"
-                    WidthRequest="100">
+                    WidthRequest="150">
                 </Image>
                 <Grid
-                    Margin="0, 10">
+                    Margin="0, 10"
+                    VerticalOptions="CenterAndExpand">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="2*"/>
@@ -29,6 +31,7 @@
                         Grid.Row="0"
                         Grid.Column="1"
                         Keyboard="Email"
+                        Text="{Binding Email, Mode=TwoWay}"
                         Placeholder="Enter your email...">
                     </Entry>
                     <Label 
@@ -44,33 +47,40 @@
                         Placeholder="Enter your password...">
                     </Entry>
                 </Grid>
-                <ActivityIndicator>
-
+                <ActivityIndicator
+                    VerticalOptions="CenterAndExpand">
+                    
                 </ActivityIndicator>
                 <StackLayout
-                    Orientation="Horizontal">
+                    Orientation="Horizontal"
+                    VerticalOptions="CenterAndExpand">
                     <Label
                         HorizontalOptions="StartAndExpand" 
                         Text="Rememberme on this device..."
                         VerticalOptions="Center">
                     </Label>
                     <Switch
+                        IsToggled="{Binding IsRemembered, Mode=TwoWay}"
                         HorizontalOptions="End">
                     </Switch>
                 </StackLayout>
                 <StackLayout
-                    Margin="15">
+                    Margin="15,0">
                     <Label
                         HorizontalOptions="Center"
-                        Text="Forgot your password ?">
+                        TextColor="Blue"
+                        Text="Forgot your password ?"
+                        VerticalOptions="CenterAndExpand">
                     </Label>
                 </StackLayout>
                 <StackLayout
                     Margin="30, 0"
-                    Orientation="Horizontal">
+                    Orientation="Horizontal"
+                    VerticalOptions="CenterAndExpand">
                     <Button
                         BackgroundColor="Navy"
                         BorderRadius="23"
+                        Command="{Binding LoginCommand}"
                         HeightRequest="46"
                         HorizontalOptions="FillAndExpand"
                         Text="Login"
@@ -86,8 +96,9 @@
                     </Button>
                 </StackLayout>
                 <StackLayout
-                    Margin="50, 20"
-                    Orientation="Horizontal">
+                    Margin="50, 0"
+                    Orientation="Horizontal"
+                    VerticalOptions="EndAndExpand">
                     <Image
                         Source="facebook_logo"
                         WidthRequest="50">

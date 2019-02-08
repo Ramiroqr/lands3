@@ -5,7 +5,7 @@ using System.Text;
 namespace Lands3.Infrastructure
 {
     using ViewModels;
-    public class IntanceLocator
+    class IntanceLocator
     {
         #region Properties
         public MainViewModel Main { get; set; }
