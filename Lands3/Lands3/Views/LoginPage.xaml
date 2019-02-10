@@ -44,10 +44,12 @@
                         Grid.Row="1"
                         Grid.Column="1"
                         IsPassword="True"
-                        Placeholder="Enter your password...">
+                        Placeholder="Enter your password..."
+                        Text="{Binding Password, Mode=TwoWay}">
                     </Entry>
                 </Grid>
                 <ActivityIndicator
+                    IsRunning="{Binding IsRunning, Mode=TwoWay}"
                     VerticalOptions="CenterAndExpand">
                     
                 </ActivityIndicator>
@@ -83,6 +85,7 @@
                         Command="{Binding LoginCommand}"
                         HeightRequest="46"
                         HorizontalOptions="FillAndExpand"
+                        IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
                         Text="Login"
                         TextColor="White">
                     </Button>
@@ -91,6 +94,7 @@
                         BorderRadius="23"
                         HeightRequest="46"
                         HorizontalOptions="FillAndExpand"
+                        IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
                         Text="Register"
                         TextColor="White">
                     </Button>
